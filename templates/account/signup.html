@@ -1,34 +1,51 @@
 {% extends 'base.html' %}
 {% load waffle_tags %}
 {% block content %}
-    <h1 class="text-xl my-4 max-w-lg flex flex-row mx-auto">SignUp</h1>
+    <h1 class="text-2xl font-semibold my-4 max-w-lg flex flex-row mx-auto">SignUp</h1>
     {% flag signup_flag %}
         <form method="post">
             {% csrf_token %}
             <div>
+                <h6 class="text-m my-4 max-w-lg flex flex-row mx-auto">Email</h6>
                 <label>
-                    <input class="border max-w-lg flex flex-row mx-auto mb-8 w-full py-2 rounded-lg" name="email"
-                           type="email">
+                    <input class="border max-w-lg flex flex-row mx-auto mb-8 w-full py-2 rounded-lg"
+                           name="login"
+                           type="email"
+                           autocomplete="email"
+                           required_id="id_login">
                 </label>
             </div>
 
             <div>
+                <h6 class="text-m my-4 max-w-lg flex flex-row mx-auto">Password</h6>
                 <label>
-                    <input class="border max-w-lg flex flex-row mx-auto mb-8 w-full py-2 rounded-lg" name="password1"
-                           type="password">
+                    <input class="border max-w-lg flex flex-row mx-auto mb-8 w-full py-2 rounded-lg"
+                           name="password1"
+                           type="password"
+                           autocomplete="current-password"
+                           required_id="id_password">
                 </label>
             </div>
 
             <div>
                 <input class="py-2 bg-cyan-800 text-white rounded-lg max-w-lg flex flex-row mx-auto mb-10 w-full"
-                       type="submit" value="Sign Up">
+                       type="submit"
+                       value="Sign Up">
             </div>
         </form>
+        {#        <p class="text-xs text-muted mt-6 leading-snug max-w-lg flex flex-row mx-auto">#}
+        {#            If you have an account please use this link to log in</p>#}
+        <div>
+            <a class="underline text-cyan-800 hover:brightness-150 my-4 max-w-lg flex flex-row mx-auto"
+               href="{% url 'account_login' %}">
+                If you have an account please use this link to log in
+            </a>
+        </div>
         <p class="text-xs text-muted mt-6 leading-snug max-w-lg flex flex-row mx-auto">
             By continuing,
             you agree to DjangoBlog&rsquo;s
-            <a href="{% url "terms" %}" class="underline" target="_blank">Terms of Service</a> and
-            <a href="{% url "privacy" %}" class="underline" target="_blank">Privacy Policy</a>.
+            <a href="{% url "terms" %}" class="underline" target="_blank"> Terms of Service </a> and
+            <a href="{% url "privacy" %}" class="underline" target="_blank"> Privacy Policy </a>.
         </p>
         {% else %}
         <p>Sorry, we are not accepting new sign-ups right now.</p>
