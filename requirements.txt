@@ -26,7 +26,7 @@ django-environ==0.11.2
     # via -r requirements.in
 django-extensions==3.2.3
     # via -r requirements.in
-django-upgrade==1.18.0
+django-upgrade==1.19.0
     # via -r requirements.in
 django-waffle==4.1.0
     # via -r requirements.in
