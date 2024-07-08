@@ -1,7 +1,7 @@
 import factory
 from django.db.models.signals import post_save
 
-from django_blog.accounts.models import User, Account
+from django_blog.accounts.models import Account, User
 
 
 class UserFactory(factory.django.DjangoModelFactory):
