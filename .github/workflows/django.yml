@@ -37,7 +37,7 @@ jobs:
           sudo apt install python3-dev python3-pydot -y
 
       - name: Test It
-        run: make coverage
+        run: make fast_coverage
 
 #      - name: Check deploy configuration
 #        run: ./manage.py check --deploy --fail-level WARNING
