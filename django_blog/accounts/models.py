@@ -1,5 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class User(AbstractUser):
@@ -8,8 +10,10 @@ class User(AbstractUser):
 
 class Account(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # profile_pic = models.ImageField(default="default.jpg", upload_to="profile_pics", blank=True, null=True)
-    full_name = models.CharField(max_length=255)
 
-    def __str__(self):
-        return self.full_name
+
+@receiver(post_save, sender=User)
+def created_account(sender, instance, created, **kwargs):
+    """A new user gets an associated account."""
+    if created:
+        Account.objects.create(user=instance)
