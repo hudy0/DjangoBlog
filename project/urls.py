@@ -6,7 +6,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
-from django_blog.core.views import index, privacy, terms
+from blog_stack.core.views import index, privacy, terms
 
 urlpatterns = [
     # django-allauth main url

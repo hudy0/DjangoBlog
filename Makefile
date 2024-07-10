@@ -105,10 +105,10 @@ start: venv install project
 
 fast_coverage:
 	@echo "Running fast coverage check"
-	@pytest --cov=django_blog -n 4 --dist loadfile -q
+	@pytest --cov=blog_stack -n 4 --dist loadfile -q
 
 coverage:
-	pytest --cov=django_blog --migrations -n 2 --dist loadfile
+	pytest --cov=blog_stack --migrations -n 2 --dist loadfile
 
 # Generate an image of the models in the system.
 graph:

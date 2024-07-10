@@ -11,7 +11,7 @@ skip_covered = true
 
 [tool.isort]
 profile = "black"
-src_paths = ["django_blog"]
+src_paths = ["blog_stack"]
 
 
 
@@ -22,7 +22,7 @@ filterwarnings = [
     "error",
 ]
 testpaths = [
-    "django_blog",
+    "blog_stack",
 ]
 
 python_files = ["test_*.py", "*_test.py", "testing/python/*.py"]

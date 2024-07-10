@@ -19,8 +19,8 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 LOCAL_APPS = [
-    "django_blog.accounts",
-    "django_blog.core",
+    "blog_stack.accounts",
+    "blog_stack.core",
 ]
 THIRD_PARTY_APPS = [
     "waffle",

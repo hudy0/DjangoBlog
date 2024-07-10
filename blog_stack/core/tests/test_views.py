@@ -1,6 +1,6 @@
 from django.urls import reverse
 
-from django_blog.accounts.tests.factories import UserFactory
+from blog_stack.accounts.tests.factories import UserFactory
 
 
 class TestIndex:
